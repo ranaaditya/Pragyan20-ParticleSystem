@@ -9,8 +9,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainsplash.setAnimation("androidsplash.json")
+    play()
+    }
+    private fun play(){
+//        mainsplash.setAnimation("android.json")
         mainsplash.playAnimation()
-        mainsplash.loop(true)
     }
 }

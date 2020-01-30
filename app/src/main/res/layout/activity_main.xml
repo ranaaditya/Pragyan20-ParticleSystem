@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     app:lottie_loop="true"
     app:lottie_autoPlay="true"
-    app:lottie_fileName="androidsplash.json"
+    app:lottie_fileName="androidsp.json"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
