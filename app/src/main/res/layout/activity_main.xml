@@ -1,18 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attv="http://schemas.android.com/apk/res-auto"
+    xmlns:pv="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#000000"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<com.airbnb.lottie.LottieAnimationView
-    android:id="@+id/mainsplash"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:lottie_loop="true"
-    app:lottie_autoPlay="true"
-    app:lottie_fileName="androidsp.json"
-        />
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/mainsplash"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_imageAssetsFolder="loader"-->
+<!--        app:lottie_loop="true"-->
+<!--        app:lottie_rawRes="@raw/splash" />-->
+
+<!--    <in.codeshuffle.typewriterview.TypeWriterView-->
+<!--        android:id="@+id/typeWriterView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/pixel"-->
+<!--        android:textColor="#ff0000"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <com.dragankrstic.autotypetextview.AutoTypeTextView-->
+<!--        android:id="@+id/lblTextWithoutMistakes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        attv:animateTextTypeWithMistakes="PRAGYAN'20 "-->
+<!--        attv:decryptionSpeed="70"-->
+<!--        attv:animateDecryption="_@#$%^@*"-->
+<!--        attv:encryptionSpeed = "70"-->
+<!--        attv:animateEncryption="_@#$%^@*"-->
+<!--        android:fontFamily="@font/raleway"-->
+<!--        android:textSize="25dp"-->
+<!--        attv:typingSpeed = "100"-->
+<!--        attv:typingPrecision="8"-->
+<!--        android:textColor="#FFFF00"/>-->
+
+<!--    <me.wangyuwei.particleview.ParticleView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/particleview"-->
+<!--        pv:pv_background_color="#2E2E2E"-->
+<!--        pv:pv_host_text="pragyan"-->
+<!--        pv:pv_host_text_size="20sp"-->
+<!--        pv:pv_particle_text="PRAGYAN'20"-->
+<!--        pv:pv_particle_text_size="14sp"-->
+<!--        pv:pv_text_color="#FFFFFF"-->
+<!--        pv:pv_text_anim_time="3000"-->
+<!--        pv:pv_spread_anim_time="2000"-->
+<!--        pv:pv_host_text_anim_time="3000"-->
+<!--        tools:ignore="InvalidId" />-->
+
+
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:id="@+id/google"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:src="@drawable/pragyan_logo"-->
+<!--        android:onClick="popit"-->
+<!--        />-->
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,4 +33,13 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation "com.airbnb.android:lottie:3.3.1"
+    implementation 'in.codeshuffle:typewriterview:1.1.0'
+    implementation 'com.krsticdragan:autotypetextview:1.1'
+    implementation 'nl.dionsegijn:pixelate:1.1.0'
+    implementation 'me.wangyuwei:ParticleView:1.0.4'
+    implementation 'me.samlss:bloom:1.0.0'
+    implementation 'tyrantgit:explosionfield:1.0.1'
+    implementation 'rb.popview:popview:0.1.0'
+    //star wars
+
 }
