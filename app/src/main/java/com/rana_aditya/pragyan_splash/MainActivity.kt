@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         var intent =Intent(this,test::class.java)
-        startActivity(intent)
+//         var intent =Intent(this,test::class.java)
+//        startActivity(intent)
 //        var  activityManager : ActivityManager = getSystemService(Context.ACTIVITY_SERVICE)
 //        var  configurationInfo : ConfigurationInfo = activityManager.getDeviceConfigurationInfo()
 //        var   supportsEs2 : Boolean = configurationInfo.reqGlEsVersion >= 0x20000

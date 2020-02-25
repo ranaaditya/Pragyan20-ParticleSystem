@@ -25,7 +25,6 @@ public class RawResourceReader {
         final BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(context.getResources().openRawResource(resId))
         );
-
         String line;
         final StringBuilder body = new StringBuilder();
 
