@@ -69,7 +69,11 @@
 <!--        pv:pv_host_text_anim_time="3000"-->
 <!--        tools:ignore="InvalidId" />-->
 
-
+ <com.rana_aditya.pragyan_splash.RippleView.GLRippleView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     app:backgroundImage="@drawable/appback"
+     android:id="@+id/glrippleview"/>
 
 
 <!--    <ImageView-->

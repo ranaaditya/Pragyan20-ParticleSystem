@@ -4,14 +4,23 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ConfigurationInfo
+import android.graphics.BitmapFactory
+import android.graphics.Point
 import android.os.Bundle
+import android.util.Log
+import android.view.Display
+import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.rana_aditya.pragyan_splash.RippleView.AnimationUtil
+import com.rana_aditya.pragyan_splash.RippleView.GLRippleView
 import kotlinx.android.synthetic.main.activity_main.*
 import rb.popview.PopField
 import tyrantgit.explosionfield.ExplosionField
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,37 +29,80 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//         var intent =Intent(this,test::class.java)
-//        startActivity(intent)
-//        var  activityManager : ActivityManager = getSystemService(Context.ACTIVITY_SERVICE)
-//        var  configurationInfo : ConfigurationInfo = activityManager.getDeviceConfigurationInfo()
-//        var   supportsEs2 : Boolean = configurationInfo.reqGlEsVersion >= 0x20000
 //
-//        if (supportsEs2){
-//            Toast.makeText(this@MainActivity,"YEAH YOU SUPPOrt",Toast.LENGTH_LONG).show()
-//        }else {
-//            Toast.makeText(this@MainActivity,"NO YOU DON'T SUPPOrt",Toast.LENGTH_LONG).show()
-//
+//        glRippleView.run {
+//            listener = this@MainActivity.listener
+//            addBackgroundImages(listOf(
+//                BitmapFactory.decodeResource(resources, R.drawable.appback),
+//                BitmapFactory.decodeResource(resources, R.drawable.appback)
+//            ))
+//            setFadeInterval(TimeUnit.SECONDS.toMillis(500))
+//            startCrossFadeAnimation()
+//            setRippleOffset(0.01f)
 //        }
-
-   // play()
-//
-//val view=findViewById<ImageView>(R.id.google)
-//         popField = PopField.attach2Window(this@MainActivity)
-
+       // glrippleview.setRippleOffset(0.005f)
+        glrippleview.listener=listener
+        //glrippleview.setFadeDuration(5000)
 
     }
 
-//    fun popit(view: View) {
-//
-//       // popField.popView(google,google,true)
-////        val explosionField = ExplosionField.attach2Window(this)
-////        explosionField.expandExplosionBound(600,600)
-////            explosionField.explode(google)
-//1
-//    }
-////    private fun play(){
-//////        mainsplash.setAnimation("android.json")
-//////        mainsplash.playAnimation()
-////    }
+
+    private val glRippleView: GLRippleView by lazy {
+        findViewById(R.id.glrippleview) as GLRippleView
+    }
+
+    private val windowWidth: Float by lazy {
+        getWidth(this)
+    }
+
+    private val windowHeight: Float by lazy {
+        getHeight(this)
+    }
+
+    private val listener: GLRippleView.Listener = object : GLRippleView.Listener {
+        override fun onTouchEvent(event: MotionEvent) {
+            if (event.action == MotionEvent.ACTION_MOVE) {
+                // center position
+                //glRippleView.setRippleOffset(0.005f)
+                glRippleView.setRipplePoint(Pair(
+                    AnimationUtil.map(event.x, 0f, windowWidth, -1f, 1f),
+                    AnimationUtil.map(event.y, 0f, windowHeight, -1f, 1f)
+                ))
+
+                // offset (x)
+                (AnimationUtil.map(event.x / windowWidth, 0f, 1f, 0f, 0.02f)).let { value ->
+                    Log.d(this.javaClass.name, "rippleOffset : " + value)
+                    glRippleView.setRippleOffset(value)
+                    glrippleview.setRippleOffset(0.0025BEf)
+                }
+            }
+        }
+    }
+    override fun onStart() {
+        super.onStart()
+        glRippleView.onResume()
+    }
+
+    override fun onStop() {
+        glRippleView.onPause()
+        super.onStop()
+    }
+
+    fun getWidth(context: Context): Float {
+        val display = getDisplay(context)
+        val size = Point()
+        display.getSize(size)
+        return size.x.toFloat()
+    }
+
+    fun getHeight(context: Context): Float {
+        val display = getDisplay(context)
+        val size = Point()
+        display.getSize(size)
+        return size.y.toFloat()
+    }
+
+    private fun getDisplay(context: Context): Display {
+        return (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
+    }
 }
