@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 (AnimationUtil.map(event.x / windowWidth, 0f, 1f, 0f, 0.02f)).let { value ->
                     Log.d(this.javaClass.name, "rippleOffset : " + value)
                     glRippleView.setRippleOffset(value)
-                    glrippleview.setRippleOffset(0.0025BEf)
+                    glrippleview.setRippleOffset(0.0025f)
                 }
             }
         }
